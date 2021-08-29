@@ -7,6 +7,6 @@ FactoryBot.define do
     data_nascimento { Faker::Date.birthday(min_age: 18) }
     email { Faker::Internet.email}
     password { 'foobar'}
-    tipo { "Paciente" } 
+    tipo { "Administrador" } 
   end
 end

@@ -1,17 +1,20 @@
 class ClinicasController < ApplicationController
-  before_action :authorize_access_request!, except: [:show, :index]
+  before_action :authorize_request, except: [:show, :index]
   before_action :set_clinica, only: [:show, :update, :destroy]
 
   # GET /clinicas
   def index
-    @clinicas = Clinica.all
-
-    render json: @clinicas
+    @clinicas = Clinica.all.includes(:profissional_da_saudes)
+    render json: @clinicas, include: ['profissional_da_saudes', 
+                                      'profissional_da_saudes.usuario', 
+                                      'profissional_da_saudes.agendamentos']
   end
 
   # GET /clinicas/1
   def show
-    render json: @clinica
+    render json: @clinica, include: ['profissional_da_saudes', 
+                                     'profissional_da_saudes.usuario', 
+                                     'profissional_da_saudes.agendamentos']
   end
 
   # POST /clinicas
@@ -47,6 +50,6 @@ class ClinicasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def clinica_params
-      params.require(:clinica).permit(:nome, :endereco, :telefone)
+      params.permit(:nome, :endereco, :telefone)
     end
 end

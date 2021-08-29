@@ -11,6 +11,6 @@ RSpec.describe Agendamento, type: :model do
   it { should validate_presence_of(:paciente) }
   it { should validate_presence_of(:profissional_da_saude) }
 
-  it { should validate_inclusion_of(:situacao).in_array(["Aberto", "Concluido", "Cancelado"])}
+  it { should validate_inclusion_of(:situacao).in_array(["A Confirmar", "Aberto", "Concluido", "Cancelado"])}
 
 end

@@ -10,4 +10,6 @@ RSpec.describe Usuario, type: :model do
   it { should validate_length_of(:email).is_at_most(256) }
   it { should validate_presence_of(:data_nascimento) }
   it { should validate_presence_of(:password_digest) }
+  it { should validate_presence_of(:tipo) }
+  it { should validate_inclusion_of(:tipo).in_array(["ProfissionalDaSaude", "Paciente", "Administrador"])}
 end
