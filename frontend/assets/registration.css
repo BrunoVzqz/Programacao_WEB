@@ -1,0 +1,195 @@
+
+#reg-cli{
+    position: absolute;
+    top: 18%;
+    left: 5%;
+    text-align:center;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    color: black;
+}
+
+#reg-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 100;
+    color: #08457C;
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+
+.reg-field{
+    height: 30px;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border-color: #94B8AF;
+    border-style: solid;
+    border-width: 3px;
+    background-color: rgba(227, 250, 252, 0.05);
+    padding-left: 10px;
+}
+
+#reg-button{
+    width: 205px;
+    height: 42px;
+    margin-top: 45px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #81DE72;
+    border-radius: 3px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#reg-button-bottom{
+    width: 205px;
+    height: 42px;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #DE1A1A;
+    border-radius: 3px;
+    border-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.reg-box-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 80px;
+    background-color: rgba(71, 211, 220, .17);
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.reg-msg-info{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+.main-reg-box-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 569px;
+    height: 224px;
+    background-color: rgba(8, 69, 124, .08);
+    margin-top: 20px;
+    margin-left: 43px;
+}
+
+.main-reg-msg-info{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+
+.about{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 100;
+    text-align: center;
+    color: #08457C;
+    padding-top: 90px;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+
+    #reg-cli{
+        top: 18%;
+        text-align: center;
+    }
+
+    #reg-aside{
+        margin-left: 22%;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-top{
+        height: 130px;;
+    }
+
+    .name-app-header{
+        font-size: 24px;
+    }
+
+    .footer-right-itens{
+        display: none;
+    }
+
+    #reg-title{
+        font-size: 19px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        background-color: rgba(71, 211, 220, .17);
+        height: 10px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        margin-bottom: 5px;
+    }
+
+    #reg-cli{
+        position: absolute;
+        top: 136px;
+        text-align:center;
+        width: 100vw;
+        height: 474px;
+        background-color: white;
+    }
+
+    #reg-aside{
+        margin-left: 0px;
+    }
+
+    .reg-box-info{
+        display: none;
+    }
+
+    #box-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    #reg-button{
+        width: 140px;
+        margin-top: 40px;
+        margin-right: 8px;
+    }
+    
+    #reg-button-bottom{
+        width: 140px;
+        margin-top: 40px;
+        margin-left: 8px;
+    }
+}
+
+@media (max-height: 570px){
+    #reg-title{
+        padding-top: 2px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-height: 545px){
+    #reg-cli{
+        position: absolute;
+        top: 120px;
+        text-align:center;
+        background-color: white;
+    }
+}
