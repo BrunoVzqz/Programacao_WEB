@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+ <html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title> Consulta Fácil </title>
+    <link rel="stylesheet" href=".\assets\images\style2.css" />
+	<script type="text/javascript" src=".\javascript\elementChangeLogin.js"></script>
+	<script type="text/javascript" src=".\javascript\validateForm.js"></script>
+		
+	</script>
+</head>
+<body>
+	<div class="container">
+		<header class="header-top">
+			<div class="header-top-left">
+				<a class="logo" href=""><img src=".\assets\images\image 2.png"></a>
+				<span class="name-app-header"> Consulta Fácil </span>
+			</div>
+			<nav class="nav-top">
+				<ul class="menu">
+					<li><a href=""><span class="menu-itens menu-itens-left"> Início </span></a></li>
+					<li><a href=""><span class="menu-itens menu-itens-left"> Atendimento </span></a></li>
+					<li>
+						<a href="">
+							<span class="menu-itens menu-itens-right menu-item-right-top"> Login </span>
+						</a>
+						<a href="">
+							<span class="menu-itens menu-itens-right menu-item-right-bottom"> Resultados <br> de Exames </span>	
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+ 
+		<aside>
+			<!--FORMULÁRIO DE LOGIN-->
+			<div id="login">
+				<form name="form-user" id="frm" method="post" action="localhost:3000/auth/login" enctype="application/json"> 
+					<h1 id="login-title" >LOGIN</h1>
+					<p><input class="login-field" id="email_login" name="email_login" required="required" type="text" placeholder=" Email"/></p>
+
+					<p class="login-label"><label for=""> Esqueceu o email? </label></p>
+					
+					<p><input class="login-field" id="senha_login" name="senha_login" required="required" type="password" placeholder=" Senha" /></p>
+					
+					<p class="login-label"><label for=""> Esqueceu a senha? </label></p>
+					
+					<p><input id="login-button" type="submit" value="Enviar" onclick="return validar()"/></p>
+				</form>
+			</div>
+		</aside>
+  		<main class="main">
+		  <div class="main-itens">
+		  	<img src=".\assets\images\paciente 2.png" class="image-main">
+			<div class="main-box-info">
+				<div class="main-msg-info">Use sua conta para acessar </br> suas consultas!</div>
+			</div>
+		  </div>
+		</main>
+  		<footer class="footer">
+			<div class="footer-left-itens">
+				<nav class="">
+					<ul class="menu-footer">
+						<li><a href=""><span class="menu-footer-left"> Contato </span></a></li>
+						<li><a href=""><span class="menu-footer-left"> Redes Sociais </span></a></li>
+					</ul>
+				</nav>
+		  	</div>
+		 	<div class="footer-right-itens">
+				<a href="">
+					<span class="menu-footer-right"> Unidades de Atendimento </span>
+					<img src=".\assets\images\Polygon 1.png">
+				</a>
+		  	</div>	
+		</footer>
+	</div> 
+</body>
+</html>
