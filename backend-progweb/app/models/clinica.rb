@@ -1,6 +1,6 @@
 class Clinica < ApplicationRecord 
 
-  has_many :profissional_da_saudes 
+  has_many :profissionais_da_saude, :class_name => "ProfissionalDaSaude" 
 
   validates_presence_of :endereco, :nome, :telefone
   validates_uniqueness_of :endereco, :telefone

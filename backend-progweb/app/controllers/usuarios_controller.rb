@@ -9,6 +9,8 @@ class UsuariosController < ApplicationController
                             data_nascimento: usuario_params[:data_nascimento],
                             password: usuario_params[:password],
                             password_confirmation: usuario_params[:password_confirmation])
+    
+    authorize usuario
 
     if usuario.valid?
       case usuario.tipo

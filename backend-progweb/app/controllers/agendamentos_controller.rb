@@ -3,19 +3,31 @@ class AgendamentosController < ApplicationController
 
   # GET /agendamentos
   def index
-    @agendamentos = Agendamento.all
+    if @current_user.tipo == "Paciente"
 
-    render json: @agendamentos
+      @agendamentos = Agendamento.where(paciente_id: @current_user.paciente_id)
+        
+    elsif @current_user.tipo == "ProfissionalDaSaude"
+      @agendamentos = Agendamento.where(profissional_da_saude_id: @current_user.profissional_da_saude_id)
+    else
+      @agendamentos = Agendamento.all
+    end
+    
+    authorize @agendamentos.first
+
+    render json: @agendamentos, include: ['resultado']
   end
 
   # GET /agendamentos/1
   def show
-    render json: @agendamento
+    authorize @agendamento
+    render json: @agendamento, include: ['resultado']
   end
 
   # POST /agendamentos
   def create
     @agendamento = Agendamento.new(agendamento_params)
+    authorize @agendamento
 
     if @agendamento.save
       render json: @agendamento, status: :created, location: @agendamento
@@ -26,7 +38,9 @@ class AgendamentosController < ApplicationController
 
   # PATCH/PUT /agendamentos/1
   def update
-    if @agendamento.update(agendamento_params)
+    authorize @agendamento
+
+    if @agendamento.update(situacao: agendamento_params[:situacao])
       render json: @agendamento
     else
       render json: @agendamento.errors, status: :unprocessable_entity
@@ -35,6 +49,7 @@ class AgendamentosController < ApplicationController
 
   # DELETE /agendamentos/1
   def destroy
+    authorize @agendamento
     @agendamento.destroy
   end
 
@@ -46,6 +61,6 @@ class AgendamentosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def agendamento_params
-      params.require(:agendamento).permit(:data, :profissional_da_saude_id, :paciente_id, :situacao)
+      params.permit(:data, :profissional_da_saude_id, :paciente_id, :situacao, :exame_id)
     end
 end

@@ -5,4 +5,5 @@ class AgendamentoSerializer < ActiveModel::Serializer
   belongs_to :paciente
 
   has_one :exame
+  has_one :resultado
 end
