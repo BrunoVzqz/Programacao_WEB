@@ -1,0 +1,3 @@
+class ClinicaPolicy < ApplicationPolicy
+  
+end
