@@ -4,7 +4,7 @@ RSpec.describe Clinica, type: :model do
 
   subject { build(:clinica) }
   
-  it { should have_many(:profissional_da_saudes) }
+  it { should have_many(:profissionais_da_saude) }
 
   it { should validate_presence_of(:nome) }
   it { should validate_presence_of(:endereco) }

@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Agendamentos", type: :request do
-  describe "GET /agendamentos" do
-    it "works! (now write some real specs)" do
-      get agendamentos_path
-      expect(response).to have_http_status(200)
-    end
+  describe 'GET agendamentos' do
+    
   end
 end
