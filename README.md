@@ -1,7 +1,7 @@
 # Programacao_WEB
 
 Rails:
-Btanch feita com os paths de windows para os arquivos no frontend no lugar dos de linux
+Branch feita com os paths de windows para os arquivos no frontend no lugar dos de linux
 Instalação para Ubuntu:
 https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04-pt
 Mudar a versão do ruby para: 2.7.2
