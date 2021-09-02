@@ -123,6 +123,7 @@ function modalClinica() {
 
 modalClinica();
 
+//modais
 var modalCriacao = document.getElementById("modal-clinica-criar");
 modalCriacao.style.display = "none";
 var btnCriacao = document.getElementById("botao-criacao");
