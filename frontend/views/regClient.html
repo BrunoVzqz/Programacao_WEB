@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="..\assets\style2.css" />
     <link rel="stylesheet" href="..\assets\registration.css" />
 	<script type="text/javascript" src="..\javascript\elementChangeReg.js"></script>
+	<script type="text/javascript" src="..\javascript\validateFormReg.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -30,24 +31,24 @@
 				</ul>
 			</nav>
 		</header>
- 
+
 		<aside id="reg-aside">
-			<!--FORMULÁRIO DE LOGIN-->
+			<!--FORMULÁRIO DE CADASTRO-->
 			<div id="reg-cli">
 				<form id="" method="post" action="#"> 
-					<h1 id="reg-title" >Crie sua conta</h1>
+					<h1 id="reg-title">Crie sua conta</h1>
 
 					<p><input class="reg-field" id="reg-name-frm" name="" required="required" type="text" placeholder=" Nome completo"/></p>
 					
 					<p><input class="reg-field" id="email_login" name="email_login" required="required" type="text" placeholder=" Email"/></p>
 
-					<p><input class="reg-field" id="" name="" required="required" type="password" placeholder=" Senha" /></p>
+					<p><input class="reg-field" id="senha-reg" name="" required="required" type="password" placeholder=" Senha" /></p>
 					
-					<p><input class="reg-field" id="" name="" required="required" type="password" placeholder=" Confirmar Senha" /></p>
+					<p><input class="reg-field" id="senha2-reg" name="" required="required" type="password" placeholder=" Confirmar Senha" /></p>
 					
 					<div id="box-button">
-						<p><input id="reg-button" type="submit" value="Enviar" onclick=""/></p>
-						<p><input id="reg-button-bottom" type="submit" value="Cancelar" onclick=""/></p>
+						<p><input id="reg-button" type="submit" value="Enviar"/></p>
+						<p><input id="reg-button-bottom" type="submit" value="Cancelar" /></p>
 					</div>
 				</form>
 				<div class="reg-box-info">
