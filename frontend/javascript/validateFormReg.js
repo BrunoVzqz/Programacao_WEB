@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             else{
                 if(senha == "" || senha !== senha_conf){
-                    alert('Senhas não conicidem ou senha nula');
+                    alert('Senhas não coincidem ou senha nula');
                 }
                 else{
                     document.getElementById("frm").submit();
