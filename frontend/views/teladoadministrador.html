@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+ <html lang="pt-br">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title id = "consultafacil"> Tela do administrador </title>
+    <link rel="stylesheet" href="style.css" />
+<script type="text/javascript" src=".\elementChange.js"></script>
+<title> Tela do Administrador</title>
+<style>
+
+	@media only (max-width: 320px) AND (max-height: 568px) {
+		.telainicial {
+			height: 80px;
+			font-size: 25px;
+			background-color: red;
+		}
+	}
+	.telainicial {
+		background-color: #47D3DC;
+		width: all;
+		height: 100px;
+		color: #FFFFFF;
+		align-items: center;
+		text-align: center;
+		vertical-align: center;
+		font-size: 40px;
+	}
+
+	.agendarconsultaparapaciente, .profissionaldasaude, .paciente {
+		background-color: #E0FFFF;
+		width: all;
+		height: 135px;
+		align-items: center;
+		text-align: center;
+	}
+
+	button {
+		background-color: #3D99AD;
+		width: 200px;
+		height: 35px;
+	}
+
+	footer {
+		height: 20px;
+		margin-bottom: -50px;
+	}
+
+	#contato, #rede-sociais {
+		margin-top: 15px;
+		text-align: center;
+		align-items: center;
+	}
+
+	#titulo {
+		font-size: 16px;
+		font-weight: bold;
+	}
+</style>
+</head>
+
+<body>
+	<div class = "telainicial">Tela do administrador</div>
+	<br>
+	<div class = "agendarconsultaparapaciente" style = "font-size: 16px; font-weight: bold;">
+		<id class = "titulo">Agendar uma consulta<br/> para um paciente!</id>
+		<br><br>
+		<button id = "agendar" onclick = "">Agendar</button>
+	</div>
+	<br/>
+
+	<div class = "profissionaldasaude" style = "font-size: 16px; font-weight: bold;">
+		<id class = "titulo">Profissional da saúde</id>
+		<p><b>Cadastrar novo profissional</b></p>
+		<button id = "atualizarUmCadastroDoProfissionalDaSaude" onclick = "">Atualizar um cadastro</button><br/>
+		<button id = "excluirUmCadastroDoProfissionalDaSaude" onclick = "">Excluir um cadastro</button><br/>
+	</div>
+	<br/>
+
+	<div class = "paciente" style = "font-size: 16px; font-weight: bold;">
+		<id class = "titulo">Paciente</id><br>
+		<button id = "cadastrarNovoPaciente" onclick = "">Cadastrar novo paciente</button><br/>
+		<button id = "atualizarUmCadastroDoPaciente" onclick = "">Atualizar um cadastro</button><br/>
+		<button id = "excluirUmCadastroDoPaciente" onclick = "">Excluir um cadastro</button><br/>
+	</div>
+
+<footer class="footer">
+<div class="footer-left-itens">
+<nav class="">
+<ul class="menu-footer">
+<li><a href=""><span class="menu-footer-left" id = "contato"> Contato </span></a></li>
+<li><a href=""><span class="menu-footer-left" id = "redes-sociais"> Redes Sociais </span></a></li>
+</ul>
+</nav>
+  </div>
+ 
+<div class="footer-right-itens">
+<a href="">
+<div class="menu-footer-right"> Unidades de Atendimento
+<img src="./images/Polygon 1.png"></div>
+</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
