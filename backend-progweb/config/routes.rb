@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :agendamentos
+  resources :agendamentos 
+  resources :resultados
   resources :clinicas
   resources :exames
 

@@ -1,8 +1,8 @@
 class Agendamento < ApplicationRecord
   belongs_to :profissional_da_saude
   belongs_to :paciente
+  belongs_to :exame
 
-  has_one :exame
   has_one :resultado
 
   SITUACOES_PERMITIDAS = ["A Confirmar", "Aberto", "Concluido", "Cancelado"].freeze

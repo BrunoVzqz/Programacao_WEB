@@ -40,7 +40,8 @@ class AgendamentosController < ApplicationController
   def update
     authorize @agendamento
 
-    if @agendamento.update(situacao: agendamento_params[:situacao])
+    if @agendamento.update(situacao: agendamento_params[:situacao],
+                           data: agendamento_params[:data])
       render json: @agendamento
     else
       render json: @agendamento.errors, status: :unprocessable_entity
@@ -54,12 +55,10 @@ class AgendamentosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_agendamento
       @agendamento = Agendamento.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def agendamento_params
       params.permit(:data, :profissional_da_saude_id, :paciente_id, :situacao, :exame_id)
     end

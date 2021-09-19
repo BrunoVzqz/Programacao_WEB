@@ -1,7 +1,7 @@
 class AgendamentoPolicy < ApplicationPolicy
   
   def index?
-    user.profissional_da_saude? || user.paciente? || user.admin?
+    user.qualquer_tipo?
   end
 
   def show?
@@ -9,10 +9,10 @@ class AgendamentoPolicy < ApplicationPolicy
   end
 
   def create?
-    user.paciente?
+    user.paciente? || user.admin?
   end
   
   def update?
-    user.profissional_da_saude? || user.paciente?
+    user.qualquer_tipo?
   end
 end

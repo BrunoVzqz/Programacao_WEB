@@ -19,8 +19,8 @@ RSpec.describe "Clinicas", type: :request do
     end
   end
 
-  describe 'GET clinicas' do
-    before { get "/clinicas/#{clinica.id}", headers: headers }
+  describe 'GET clinicas/id' do
+    before { get "/clinicas/#{clinica.id}", headers: valid_headers }
     
     it 'tem resposta http 200' do
       expect(response).to have_http_status(200)
@@ -41,7 +41,7 @@ RSpec.describe "Clinicas", type: :request do
       let(:valid_attributes) do
         attributes_for(:clinica)
       end
-      before { post "/clinicas", params: valid_attributes.to_json, headers: headers }
+      before { post "/clinicas", params: valid_attributes.to_json, headers: valid_headers }
       
       it 'tem resposta http 201' do
         expect(response).to have_http_status(201)
@@ -54,7 +54,7 @@ RSpec.describe "Clinicas", type: :request do
 
     context 'requisição inválida' do
       context 'atributos inválidos' do
-        before { post "/clinicas", params: {}, headers: headers }
+        before { post "/clinicas", params: {}, headers: valid_headers }
 
         it 'tem resposta http 422' do
           expect(response).to have_http_status(422)
@@ -62,9 +62,9 @@ RSpec.describe "Clinicas", type: :request do
 
         it 'Mostra mensagem de erro' do
           expect(JSON.parse(response.body))
-          .to match("endereco"=>["can't be blank"], 
-                    "nome"=>["can't be blank"], 
-                    "telefone"=>["can't be blank", "Telefone inválido"])
+          .to match("endereco"=>["não pode ficar em branco"], 
+                    "nome"=>["não pode ficar em branco"], 
+                    "telefone"=>["não pode ficar em branco", "Telefone inválido"])
         end
       end
       context 'headers inválidos' do
@@ -87,7 +87,7 @@ RSpec.describe "Clinicas", type: :request do
       let(:valid_attributes) do
         attributes_for(:clinica)
       end
-      before { put "/clinicas/#{clinica.id}", params: valid_attributes.to_json, headers: headers }
+      before { put "/clinicas/#{clinica.id}", params: valid_attributes.to_json, headers: valid_headers }
       
       it 'tem resposta http 200' do
         expect(response).to have_http_status(200)
@@ -130,7 +130,7 @@ RSpec.describe "Clinicas", type: :request do
 
   describe 'DELETE clinicas/id' do
     context 'requisição válida' do
-      before { delete "/clinicas/#{clinica.id}", headers: headers }
+      before { delete "/clinicas/#{clinica.id}", headers: valid_headers }
 
       it 'tem resposta http 204' do
         expect(response).to have_http_status(204)
@@ -141,7 +141,7 @@ RSpec.describe "Clinicas", type: :request do
     end
     context 'requisição inválida' do
       context 'clinica não existe' do
-        before { put "/clinicas/-1", params: {}, headers: headers }
+        before { put "/clinicas/-1", params: {}, headers: valid_headers }
 
         it 'tem resposta http 404' do
           expect(response).to have_http_status(404)

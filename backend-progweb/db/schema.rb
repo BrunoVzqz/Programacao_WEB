@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_19_180129) do
+ActiveRecord::Schema.define(version: 2021_09_19_204032) do
 
   create_table "agendamentos", force: :cascade do |t|
     t.date "data"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_08_19_180129) do
     t.string "situacao", default: "Aberto", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "exame_id"
+    t.index ["exame_id"], name: "index_agendamentos_on_exame_id"
     t.index ["paciente_id"], name: "index_agendamentos_on_paciente_id"
     t.index ["profissional_da_saude_id"], name: "index_agendamentos_on_profissional_da_saude_id"
   end
@@ -32,12 +34,10 @@ ActiveRecord::Schema.define(version: 2021_08_19_180129) do
   end
 
   create_table "exames", force: :cascade do |t|
-    t.integer "agendamento_id"
     t.string "nome"
     t.text "descricao"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["agendamento_id"], name: "index_exames_on_agendamento_id"
   end
 
   create_table "pacientes", force: :cascade do |t|
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2021_08_19_180129) do
 
   add_foreign_key "agendamentos", "pacientes"
   add_foreign_key "agendamentos", "profissional_da_saudes"
-  add_foreign_key "exames", "agendamentos"
   add_foreign_key "profissional_da_saudes", "clinicas"
   add_foreign_key "resultados", "agendamentos"
 end

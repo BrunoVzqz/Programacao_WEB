@@ -1,5 +1,5 @@
 class ExamesController < ApplicationController
-  before_action :authorize_access_request!, except: [:show, :index]
+  before_action :authorize_request, except: [:show, :index]
   before_action :set_exame, only: [:show, :update, :destroy]
 
   def index
@@ -16,6 +16,8 @@ class ExamesController < ApplicationController
   # POST /exames
   def create
     @exame = Exame.new(exame_params)
+
+    authorize @exame
 
     if @exame.save
       render json: @exame, status: :created, location: @exame
@@ -46,6 +48,6 @@ class ExamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exame_params
-      params.require(:exame).permit(:nome, :descricao)
+      params.permit(:nome, :descricao)
     end
 end

@@ -17,7 +17,7 @@ RSpec.describe 'Usuario API', type: :request do
       end
 
       it 'returns success message' do
-        expect(json['message']).to match(/Account created successfully/)
+        expect(json['message']).to match(/Conta criada com sucesso/)
       end
 
       it 'returns an authentication token' do
@@ -35,7 +35,7 @@ RSpec.describe 'Usuario API', type: :request do
         end
   
         it 'returns success message' do
-          expect(json['message']).to match(/Account created successfully/)
+          expect(json['message']).to match(/Conta criada com sucesso/)
         end
   
         it 'returns an authentication token' do
@@ -62,7 +62,7 @@ RSpec.describe 'Usuario API', type: :request do
         end
   
         it 'returns success message' do
-          expect(json['message']).to match(/Account created successfully/)
+          expect(json['message']).to match(/Conta criada com sucesso/)
         end
   
         it 'returns an authentication token' do
@@ -84,7 +84,7 @@ RSpec.describe 'Usuario API', type: :request do
 
       it 'returns failure message' do
         expect(json['message'])
-          .to match("Validation failed: Password can't be blank, Nome can't be blank, Email can't be blank, Sobrenome can't be blank, Data nascimento can't be blank, Tipo can't be blank, Password digest can't be blank, Tipo is not included in the list, Email is invalid, Email is too short (minimum is 3 characters)")
+          .to match("A validação falhou: Password não pode ficar em branco, Nome não pode ficar em branco, Email não pode ficar em branco, Sobrenome não pode ficar em branco, Data nascimento não pode ficar em branco, Tipo não pode ficar em branco, Password digest não pode ficar em branco, Tipo não está incluído na lista, Email não é válido, Email é muito curto (mínimo: 3 caracteres)")
       end
     end
   end

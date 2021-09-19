@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :resultado do
-    informacoes { Faker::Books::Lovecraft.fhtagn}
+    informacoes { Faker::Books::Lovecraft.fhtagn }
+    agendamento { create(:agendamento) }
   end
 end

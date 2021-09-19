@@ -15,12 +15,8 @@ class AuthorizeApiRequest
   attr_reader :headers
 
   def usuario
-    # check if usuario is in the database
-    # memoize usuario object
     @usuario ||= Usuario.find(decoded_auth_token[:usuario_id]) if decoded_auth_token
-    # handle usuario not found
   rescue ActiveRecord::RecordNotFound => e
-    # raise custom error
     raise(
       ExceptionHandler::InvalidToken,
       ("#{Message.invalid_token} #{e.message}")
