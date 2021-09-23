@@ -62,8 +62,8 @@ RSpec.describe "Clinicas", type: :request do
 
         it 'Mostra mensagem de erro' do
           expect(JSON.parse(response.body))
-          .to match("endereco"=>["não pode ficar em branco"], 
-                    "nome"=>["não pode ficar em branco"], 
+          .to match("endereco"=>["não pode ficar em branco", "é muito curto (mínimo: 8 caracteres)"], 
+                    "nome"=>["não pode ficar em branco", "é muito curto (mínimo: 3 caracteres)"], 
                     "telefone"=>["não pode ficar em branco", "Telefone inválido"])
         end
       end

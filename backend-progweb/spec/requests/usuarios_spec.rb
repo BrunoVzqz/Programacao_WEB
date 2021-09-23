@@ -84,7 +84,7 @@ RSpec.describe 'Usuario API', type: :request do
 
       it 'returns failure message' do
         expect(json['message'])
-          .to match("A validação falhou: Password não pode ficar em branco, Nome não pode ficar em branco, Email não pode ficar em branco, Sobrenome não pode ficar em branco, Data nascimento não pode ficar em branco, Tipo não pode ficar em branco, Password digest não pode ficar em branco, Tipo não está incluído na lista, Email não é válido, Email é muito curto (mínimo: 3 caracteres)")
+          .to match("A validação falhou: Password não pode ficar em branco, Nome não pode ficar em branco, Email não pode ficar em branco, Sobrenome não pode ficar em branco, Data nascimento não pode ficar em branco, Tipo não pode ficar em branco, Password digest não pode ficar em branco, Tipo não está incluído na lista, Email não é válido, Password é muito curto (mínimo: 3 caracteres), Email é muito curto (mínimo: 3 caracteres), Nome é muito curto (mínimo: 2 caracteres), Sobrenome é muito curto (mínimo: 2 caracteres)")
       end
     end
   end

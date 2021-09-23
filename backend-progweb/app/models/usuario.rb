@@ -7,7 +7,9 @@ class Usuario < ApplicationRecord
   validates :tipo, inclusion: { in: TIPOS_PERMITIDOS }
   validates :email, uniqueness: true, format: /\A\S+@.+\.\S+\z/
   validate :paciente_ou_medico
+  validates_length_of :password, maximum: 256, minimum: 3
   validates_length_of :email, maximum: 256, minimum: 3
+  validates_length_of :nome, :sobrenome, maximum: 255, minimum: 2
 
   
   def paciente_ou_medico
@@ -15,7 +17,6 @@ class Usuario < ApplicationRecord
       errors.add(:usuario, message: "Um usuário não pode ser um paciente e um profissional da saúde")
     end
   end
-  
   
   def admin?
     self.tipo == "Administrador"

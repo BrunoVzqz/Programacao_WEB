@@ -1,0 +1,3 @@
+class ProfissionalDaSaudePolicy < ApplicationPolicy
+
+end

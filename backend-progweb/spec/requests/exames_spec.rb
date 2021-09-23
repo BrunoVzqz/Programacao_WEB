@@ -73,8 +73,8 @@ RSpec.describe "Exames", type: :request do
   
       it 'Mostra mensagem de erro' do
         expect(JSON.parse(response.body))
-        .to match("descricao"=>["não pode ficar em branco"], 
-                  "nome"=>["não pode ficar em branco"])
+        .to match("descricao"=>["não pode ficar em branco", "é muito curto (mínimo: 3 caracteres)"], 
+                  "nome"=>["não pode ficar em branco", "é muito curto (mínimo: 3 caracteres)"])
       end
     end
   end
