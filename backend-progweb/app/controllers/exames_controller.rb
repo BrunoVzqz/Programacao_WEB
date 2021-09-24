@@ -28,6 +28,7 @@ class ExamesController < ApplicationController
 
   # PATCH/PUT /exames/1
   def update
+    authorize @exame
     if @exame.update(exame_params)
       render json: @exame
     else
@@ -37,6 +38,7 @@ class ExamesController < ApplicationController
 
   # DELETE /exames/1
   def destroy
+    authorize @exame
     @exame.destroy
   end
 

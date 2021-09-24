@@ -5,7 +5,7 @@ class ClinicasController < ApplicationController
   # GET /clinicas
   def index
     @clinicas = Clinica.all.includes(:profissionais_da_saude)
-    authorize @clinicas.first
+    authorize @clinicas.first if @clinicas.any?
     render json: @clinicas, include: ['profissionais_da_saude', 
                                       'profissionais_da_saude.usuario', 
                                       'profissionais_da_saude.agendamentos']

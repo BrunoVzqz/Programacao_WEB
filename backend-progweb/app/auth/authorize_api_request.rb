@@ -15,7 +15,7 @@ class AuthorizeApiRequest
   attr_reader :headers
 
   def usuario
-    @usuario ||= Usuario.find(decoded_auth_token[:usuario_id]) if decoded_auth_token
+    @usuario ||= Usuario.find(decoded_auth_token[:id]) if decoded_auth_token
   rescue ActiveRecord::RecordNotFound => e
     raise(
       ExceptionHandler::InvalidToken,

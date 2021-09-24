@@ -4,7 +4,7 @@ class ResultadosController < ApplicationController
   # GET /resultados
   def index
     @resultados = Resultado.all
-    authorize @resultados.first
+    authorize @resultados.first if @resultados.any?
     render json: @resultados
   end
 
@@ -20,6 +20,7 @@ class ResultadosController < ApplicationController
     authorize @resultado
 
     if @resultado.save
+      Agendamento.find(@resultado.agendamento_id).update!(situacao: "Concluido")
       render json: @resultado, status: :created, location: @resultado
     else
       render json: @resultado.errors, status: :unprocessable_entity

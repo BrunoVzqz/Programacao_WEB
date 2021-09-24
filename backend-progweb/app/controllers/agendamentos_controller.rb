@@ -13,7 +13,7 @@ class AgendamentosController < ApplicationController
       @agendamentos = Agendamento.all
     end
     
-    authorize @agendamentos.first
+    authorize @agendamentos.first if @agendamentos.any?
 
     render json: @agendamentos, include: ['resultado']
   end
